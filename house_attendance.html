@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>House Attendance Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="js_task.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div><img class="img-responsive" ; width=180px; src="imageedit_11_4178752366.gif" alt="TGIF_logo" style="padding-left: 10px; padding-top:10px;"></div>
+            <div style="display:flex; justify-content: flex-end; align-items: center; ">
+                <img src="icons8-secured-letter-16.png"><a style="margin-right: 20px;" href="mailto:info@tgif.net">info@tgif.net</a>
+            </div>
+        </div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <a class="navbar-brand" style="border-right:solid 1px #55578b;" href="#">TGIF</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="home.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate-data.html">Senate</a></li>
+                            <li><a href="house-data.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate_attendance.html">Senate</a></li>
+                            <li class="active"><a href="#">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate_party-loyalty.html">Senate</a></li>
+                            <li><a href="house_party-loyalty.html">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div style="display:flex; align-items: flex-start; justify-content: space-between; padding-bottom: 9px; border-bottom: 1px solid #eee;">
+                <div style="flex-grow: 1; flex-shrink: 1">
+                    <h2>Attendance</h2>
+                    <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+
+                    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+                </div>
+                <div style="flex-shrink: 0; margin-left: 30px">
+                    <h2 class="text-right">House at a glance</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Party</th>
+                                <th>Number of Reps</th>
+                                <th>% Votes with Party</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Republican</td>
+                                <td id="number1">--</td>
+                                <td id="pct1">--</td>
+                            </tr>
+                            <tr>
+                                <td>Democrat</td>
+                                <td id="number2">--</td>
+                                <td id="pct2">--</td>
+                            </tr>
+                            <tr>
+                                <td>Independent</td>
+                                <td id="number3">--</td>
+                                <td id="pct3">--</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td id="number4"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div style="display:flex; align-items: flex-start; justify-content: space-between">
+
+                <div>
+                    <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_of_least_engaged">
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h2 style="margin-left: 20px">Most Engaged (Top 10% Attendance)</h2>
+                    <table class="table table-striped"style="margin-left: 20px">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_of_most_engaged">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container align-middle">
+        <nav class="navbar navbar-default footer" style="display: flex;
+            justify-content: center;
+            align-items: center;">
+            <div class="navbar-header">
+                <p class="text-center align-bottom">&#169; 2017 TGIF | All Rights Reserved</p>
+            </div>
+        </nav>
+    </div>
+    <script src="pro-congress-113-house.js"></script>
+    <script src="statistics.js"></script>
+</body>
+
+</html>
