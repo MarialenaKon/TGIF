@@ -1,0 +1,15 @@
+body { 
+	font: 110% georgia, sans-serif;
+    font-size: 14px;
+	line-height: 1.88889;
+	color: #55578b; 
+	background: #fff; 
+	margin: 0; 
+	padding: 0;
+	}
+.page-header {
+    background-image: url(images/Flags%202.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 -60px;
+    background-size: cover;
+}
