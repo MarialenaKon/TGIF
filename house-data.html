@@ -14,61 +14,68 @@
 
 <body>
     <div class="container">
-        <div class="page-header">
-            <div><img class="img-responsive" ; width=180px; src="images/imageedit_11_4178752366.gif" alt="TGIF_logo" style="padding-left: 10px; padding-top:10px;"></div>
-            <div style="display:flex; justify-content: flex-end; align-items: center; ">
-                <img src="images/icons8-secured-letter-16.png"><a style="margin-right: 20px;" href="mailto:info@tgif.net">info@tgif.net</a>
+        <div id="page-header" class="flex-row">
+            <div><img id="logo" class="" src="images/imageedit_11_4178752366.gif" alt="TGIF_logo"></div>
+            <div id="info" class="flex-around-end">
+                <a href="mailto:info@tgif.net"><img src="images/icons8-secured-letter-16.png">info@tgif.net</a>
             </div>
         </div>
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                    <a class="navbar-brand" style="border-right:solid 1px #55578b;" href="#">TGIF</a>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TGIF</a>
                 </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="home.html">Home</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="senate-data.html">Senate</a></li>
-                                <li class="active"><a href="house-data.html">House</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="senate_attendance.html">Senate</a></li>
-                                <li><a href="#">House</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="senate_party-loyalty.html">Senate</a></li>
-                                <li><a href="#">House</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="home.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate-data.html">Senate</a></li>
+                            <li class="active"><a href="house-data.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate_attendance.html">Senate</a></li>
+                            <li><a href="#">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="senate_party-loyalty.html">Senate</a></li>
+                            <li><a href="#">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <div class="container">
         <h2>Congressmen</h2>
         <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
         <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
     </div>
+
     <div class="container">
-        <form id="filter_form">
-            <div id="checkboxes" style="margin-top: 20px; display:flex; justify-content: space-between">
-                <div style="display:flex">
-                    <p style="padding-right: 15px">Filter by Party:</p>
-                    <label class="checkbox-inline" for="R"><input type="checkbox" id="R">Republican</label>
-                    <label class="checkbox-inline" for="D"><input type="checkbox" id="D">Democrat</label>
-                    <label class="checkbox-inline" for="I"><input type="checkbox" id="I">Independent</label>
+        <div id="checkboxes" class="flex-row">
+            <div class="flex-center">
+                <p class="padding-right">Filter by Party:</p>
+
+                <div class="flex-label"><input type="checkbox" id="R">
+                    <p>Republican</p>
                 </div>
-                <div style="display: flex">
-                    <p style="padding-right: 15px">Filter by State:</p>
-                    <select id="state-filter" style="display: inline-block; height: 22px">
+                <div class="flex-label"><input type="checkbox" id="D">
+                    <p>Democrat</p>
+                </div>
+                <div class="flex-label"><input type="checkbox" id="I">
+                    <p>Independent</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <p class="padding-right">Filter by State:</p>
+                <select id="state-filter">
                             <option value="all">All</option>
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
@@ -122,26 +129,25 @@
                             <option value="WY">WY</option>
                             
                         </select>
-                </div>
-
             </div>
-        </form>
+
+        </div>
 
         <table id="new_table" class="text-center table table-striped">
         </table>
     </div>
-    <div class="container align-middle">
-        <nav class="navbar navbar-default footer" style="display: flex;
-            justify-content: center;
-            align-items: center;">
+    
+    <div class="container footer">
+        <nav class="navbar navbar-default flex-center">
             <div class="navbar-header">
-                <p class="text-center align-bottom">&#169; 2017 TGIF | All Rights Reserved</p>
+                <p>&#169; 2017 TGIF | All Rights Reserved</p>
             </div>
         </nav>
     </div>
+    
     <script src="pro-congress-113-house.js"></script>
     <script src="statistics_filtered.js"></script>
-    <!--same as task 3 but outside the folder alla statistics-->
+
 </body>
 
 </html>
